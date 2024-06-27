@@ -87,10 +87,13 @@ nav{
 }
 .navigation{
   display: flex;
-  margin: auto;
+  margin: 0 auto 10px;
   width: fit-content;
   gap: 150px;
   a, button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
@@ -98,8 +101,53 @@ nav{
     background: transparent;
     border-radius: 30px;
     color: grey;
-    padding: 10px;
-    width: 70px;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+form{
+  border: 1px solid black;
+  width: 600px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  border-radius: 20px;
+  label{
+    font-size:20px;
+    cursor: pointer;
+  }
+  input, textarea{
+    margin: 5px auto 30px;
+  }
+  .text-input{
+    display: block;
+    width: 99%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+  }
+  #daysSinceLastCrisis{
+    text-align: right;
+    border: none;
+    width: 60px;
+    margin-right: 7px;
+    font-size: 20px
+  }
+  .text-input, #daysSinceLastCrisis{
+    height: 25px;
+  }
+  .checkbox-label{
+    position: relative;
+    left: 5px;
+    bottom: -3px;
+  }
+  #submit{
+    display: block;
+    margin: auto;
+    font-size: 30px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
     cursor: pointer;
   }
 }

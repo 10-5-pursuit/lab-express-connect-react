@@ -30,7 +30,7 @@ describe("New Page", () => {
       cy.get("form > textarea").should("have.attr", "id", "post");
 
       // for this label/input use htmlFor/id: 'daysSinceLastCrisis'
-      cy.get("label").contains("Days Since Last Crisis");
+      cy.get("label").contains("days since last crisis");
       cy.get("#daysSinceLastCrisis").should("have.attr", "type", "number");
 
       // for this label/input use htmlFor/id: 'mistakesWereMadeToday'

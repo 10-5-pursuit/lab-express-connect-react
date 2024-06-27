@@ -18,6 +18,7 @@ describe("Edit Page", () => {
   });
 
   it("Has a 'Back' link that has a link back to '/logs'", () => {
+    cy.visit(`${URL}/logs/0`);
     cy.get('a[href*="/logs"]').contains("Back").contains("Back");
   });
 
@@ -27,6 +28,7 @@ describe("Edit Page", () => {
 
     it("has a form with correct labels and fields", () => {
       // for this label/input use htmlFor/id: 'name'
+      cy.visit(`${URL}/logs/1/edit`);
       cy.get("label").contains("Captain's Name");
       cy.get("#captainName").should("have.attr", "type", "text");
 
@@ -39,7 +41,7 @@ describe("Edit Page", () => {
       cy.get("form > textarea").should("have.attr", "id", "post");
 
       // for this label/input use htmlFor/id: 'daysSinceLastCrisis'
-      cy.get("label").contains("Days Since Last Crisis");
+      cy.get("label").contains("days since last crisis");
       cy.get("#daysSinceLastCrisis").should("have.attr", "type", "number");
 
       // for this label/input use htmlFor/id: 'mistakesWereMadeToday'
@@ -63,10 +65,11 @@ describe("Edit Page", () => {
         // go back to index to see the edit as well
         cy.visit(`${URL}/logs`);
       } else {
-        cy.get("#captainName").clear().type("Karolin");
+        cy.visit(`${URL}/logs/1/edit`);
+        cy.wait(1000).get("#captainName").clear().type("Karolin");
         cy.get("#title").clear().type("Silver Rocket");
         cy.get("form > textarea").type("!!!!!!");
-        cy.get("form").submit();
+        cy.get("form > button").click();
 
         // confirm correct routing after submission
         cy.url().should("eq", "http://localhost:3000/logs/1");
@@ -75,7 +78,7 @@ describe("Edit Page", () => {
         // go back to index to see the edit as well
         cy.visit(`${URL}/logs`);
         // confirm update is on the index
-        cy.get("td").eq(4).contains("Karolin");
+        cy.wait(500).get("td").eq(4).contains("Karolin");
       }
     });
   });
