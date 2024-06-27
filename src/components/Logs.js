@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Log from "./Log";
 
-const API = "http://localhost:8888";
+const API = process.env.REACT_APP_API;
 
 export default function Logs() {
     const [logs, setLogs] = useState([]);
@@ -16,7 +16,7 @@ export default function Logs() {
       }, []);
     
     return (
-        <table className="logs">
+        <table className="Log">
             <thead>
             <tr>
                 <th>Mistakes</th>

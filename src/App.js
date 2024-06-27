@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // PAGES
 import Home from "./pages/Home";
 import Index from "./pages/Index";
+import Show from "./pages/Show"
 
 // COMPONENTS
 import NavBar from "./components/NavBar";
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/logs" element={<Index />} />
-
+          <Route path="/logs/:index" element={<Show />} />
         </Routes>
       </main> 
     </Router>
