@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API;
 
@@ -28,7 +28,7 @@ useEffect(() => {
   .catch((error) => {
       console.error(error)
   });
-}, []);
+}, [index]);
 
     // Add a bookmark, return to the index view
     const addLog = () => {

@@ -20,7 +20,7 @@ export default function LogDetails() {
       .catch(() => {
         navigate("/not-found");
       });
-    }, []);
+    }, [index, navigate]);
 
     // Be able to delete a color. Return to index view.
     const handleDelete = () => {
