@@ -39,6 +39,9 @@ const Show = () => {
               <p>{captain.daysSinceLastCrisis}</p>  
             </div>
             }
+            <Link to={`/captains/${index}/edit`}>
+                <button>Edit</button>
+            </Link>
             <button onClick={handleDelete}>Delete</button>
         </div>
     )

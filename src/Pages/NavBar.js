@@ -7,6 +7,11 @@ const NavBar = () => {
             <h1>
                 <Link to ="/captains">Captains's Logs</Link>
             </h1>
+            <ul>
+                <li>
+                    <Link to="/captains/new">Add Captain</Link>
+                </li>
+            </ul>
         </nav>
     )
 }
