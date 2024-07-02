@@ -1,12 +1,18 @@
-import './Navbar.css'
+import React from 'react';
+import { Link } from 'react-router-dom'
+import './Navbar.css';
 
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
-     <div className='page-title'>Captain's Log</div>
-     <input className='submit' type="submit" value="NEW LOG"/>
-    </div>
+    <nav className='navbar'>
+      <h1 className='page-title'>
+        <Link to="/">Captain's Log</Link>
+      </h1>
+      <button className='submit'>
+        <Link to="/logs/new">NEW LOG</Link>
+      </button>
+    </nav>
   )
 }
 
