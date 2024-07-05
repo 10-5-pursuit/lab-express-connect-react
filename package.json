@@ -9,11 +9,12 @@
     "axios": "^0.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.24.0",
     "react-scripts": "5.0.1",
-    "react-router-dom": "^6.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "vite",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "cypress open",
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "cypress": "^9.7.0",
     "cypress-react-selector": "^3.0.0",
     "cypress-watch-and-reload": "^1.10.3"

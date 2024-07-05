@@ -1,0 +1,28 @@
+.navbar{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* border: 1px red solid; */
+    background-color: hsl(205deg 93% 12%);
+    font-family: sans-serif;
+    /* padding: 20px; */
+}
+
+.page-title {
+    /* border: 1px red solid; */
+    color: white ;
+    font-size: 25pt;
+}
+
+.submit {
+    border: 1px white solid;
+    background-color: hsl(205deg 93% 12%);
+    color: white ;
+    border-radius: 5px;
+    width: 90px;
+    margin-left: 200px;
+    font-size: 8pt;
+    padding: 5px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+
