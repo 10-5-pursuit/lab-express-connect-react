@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 
 const Show = () => {
     const [logDisplay, setLogDisplay] = useState(null)
     const { index } = useParams()
+    const navigate = useNavigate()
     // const API = import.meta.env.VITE_BASE_URL 
 
     // console.log(index)
@@ -18,6 +19,18 @@ const Show = () => {
             .catch(err => console.log(err))
     }, [])
 
+    const handleDelete = ()=> {
+        fetch(`http://localhost:4001/logs/${index}`, {
+            method: "DELETE"
+        })
+        .then(res => res.json())
+        .then(res =>{
+            navigate('/logs')
+        })
+        .catch(err => console.log(err))
+
+    }
+
     // console.log(logDisplay)
     return (
         <div>
@@ -27,8 +40,12 @@ const Show = () => {
                     <h3>{logDisplay.post}</h3>
                 </div>
             }
-{/* <Link to={`/logs/${ind}/edit`}>Edit</Link>
-            <p>Edit</p> */}
+
+            <Link to={`/logs/${index}/edit`}>
+            <button>Edit</button>
+            </Link>
+            <br />
+            <button onClick={handleDelete}>Delete</button>
         </div>
     )
 }
