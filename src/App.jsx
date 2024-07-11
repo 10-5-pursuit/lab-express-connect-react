@@ -1,6 +1,7 @@
-import React from 'react'; 
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+// import './App.css';
 import NavBar from './components/NavBar';
 import LogList from './components/LogList';
 import LogDetails from './components/LogDetails';

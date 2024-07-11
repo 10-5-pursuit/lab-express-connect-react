@@ -1,5 +1,5 @@
+import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import React from 'react'; 
 
 const LogDetails = ({ logs }) => {
   const { index } = useParams();
@@ -8,7 +8,7 @@ const LogDetails = ({ logs }) => {
 
   const handleDelete = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL}/logs/${index}`, {
+      await fetch(`http://localhost:3000/logs/${index}`, {
         method: 'DELETE',
       });
       navigate('/logs');
@@ -38,6 +38,9 @@ const LogDetails = ({ logs }) => {
       <div className='button-group'>
         <Link to={`/logs`} className='back-button'>
           Back
+        </Link>
+        <Link to={`/logs/${index}/edit`} className='edit-button'>
+          Edit
         </Link>
         <button onClick={handleDelete} className='delete-button'>
           Delete
